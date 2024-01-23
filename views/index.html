@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script type="module" src="https://cdn.skypack.dev/@startinblox/core"></script>
+    <script type="module" src="https://cdn.skypack.dev/@startinblox/router"></script>
     <title>Startin'blox</title>
 </head>
 <body>
-
+    <solid-widget name="collabnext-checkbox">
+        <template>
+            ${(await value) === 'true'
+            ? '<input type="checkbox" id="checkbox1" name="checkbox" checked/>'
+            : '<input type="checkbox" id="checkbox2" name="checkbox"/>'
+            }
+        </template>
+    </solid-widget>
+    <solid-router default-route="all" use-hash>
+        <solid-route name="all">view all</solid-route>
+        <solid-route name="view" use-id>view it</solid-route>
+    </solid-router>
+    <div data-view="all">
+        <solid-display
+                data-src="data.json"
+                search-fields="read"
+                search-value-read="false"
+                fields="infos(from,title),read"
+                widget-from="solid-display-link-mailto"
+                widget-read="collabnext-checkbox"
+                counter-template="${counter} emails!"
+                next="view">
+        </solid-display>
+    </div>
+    <div data-view="view">
+        <solid-display
+                bind-resources
+                fields="from,title"
+        ></solid-display>
+    </div>
 </body>
 </html>
