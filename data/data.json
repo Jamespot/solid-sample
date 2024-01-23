@@ -1,0 +1,35 @@
+{
+    "@context": {
+        "ldp": "http://www.w3.org/ns/ldp#",
+        "@vocab": "https://projet-collabnext.jamespot.pro/vocab#",
+        "from": "http://xmlns.com/foaf/0.1/mbox"
+    },
+    "@id": "/mails/",
+    "@type": "ldp:Container",
+    "ldp:contains": [
+        {
+            "@id": "/mails/1",
+            "@type": "collabnext:Mail",
+            "from": "paul.giraudon@jamespot.com",
+            "title": "Hello world!",
+            "received": "2024-01-23 12:00:00TZ",
+            "read": true
+        },
+        {
+            "@id": "/mails/2",
+            "@type": "collabnext:Mail",
+            "from": "claire.charpentier@jamespot.com",
+            "title": "Coucou xoxo",
+            "received": "2022-12-01 10:00:00TZ",
+            "read": false
+        },
+        {
+            "@id": "/mails/3",
+            "@type": "collabnext:Mail",
+            "from": "damien.percereau@jamespot.com",
+            "title": "Lis mes mails !",
+            "received": "2023-03-12 11:00:00TZ",
+            "read": false
+        }
+    ]
+}
